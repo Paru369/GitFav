@@ -64,6 +64,16 @@ export class Favorites{
      const filteredEntries = this.entries.filter( entry => entry.login !== user.login )
 
      this.entries = filteredEntries
+
+
+     const noFav = this.entries.length === 0
+
+ 
+
+
+
+
+
      this.update()
      this.save()
   }
@@ -97,19 +107,25 @@ export class FavoritesView extends Favorites{
   }
 
 
+  Nenhum(){
+
+    this.entries.length === 0 ? 
+    document.querySelector('.nenhum').classList.remove('sr-only') : 
+    document.querySelector('.nenhum').classList.add('sr-only')
+  }
+
+
 
   update(){
 
+    
+   this.Nenhum()
+
+
     this.removeAllTr()
 
-    const noFav = this.entries.length === 0
-
-  console.log(noFav)
-  if (this.entries.length == 0){
-    const nothing = document.querySelector('.nenhum')
-    nothing.classList.remove('sr-only')
-}
-    
+   
+   
     
    
    this.entries.forEach(user => { 
@@ -142,7 +158,7 @@ export class FavoritesView extends Favorites{
     this.tbody.append(row)
   })
 
-
+  
 
 
 
