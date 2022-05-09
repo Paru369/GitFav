@@ -5,6 +5,8 @@
 
 Página para salvar perfis favoritos do Github.
 
+Figma: https://www.figma.com/file/SzQA07HwmSPj4hOYgu1Pps/%5BDesafios-Explorer%5D-GitFav/duplicate
+
 
 Deploy:https://paru369.github.io/GitFav/
 
@@ -39,7 +41,7 @@ Versão única
 
 ## ✒️ Autores
 
- * **NLW Rocketseat**
+ * **EXPLORE Rocketseat**
 
 * **Paulo Victor Pinheiro** - *Trabalho Inicial* - [Paru - Paulo Victor](https://www.linkedin.com/in/paulo-pinheiro-4a94b0150/)
 
