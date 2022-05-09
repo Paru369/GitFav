@@ -32,7 +32,7 @@ export class Favorites{
 
       const userExists = this.entries.find(entry => entry.login === username)
 
-      console.log(userExists)
+     
 
       if(userExists) {
         
@@ -101,6 +101,14 @@ export class FavoritesView extends Favorites{
   update(){
 
     this.removeAllTr()
+
+    const noFav = this.entries.length === 0
+
+  console.log(noFav)
+  if (this.entries.length == 0){
+    const nothing = document.querySelector('.nenhum')
+    nothing.classList.remove('sr-only')
+}
     
     
    
@@ -121,6 +129,8 @@ export class FavoritesView extends Favorites{
 
     row.querySelector('.followers').textContent = user.followers
 
+
+    
     row.querySelector('.remove').onclick = () =>{ 
       const isOk = confirm('Deseja remover este usuário?')
       if(isOk) {
@@ -147,17 +157,18 @@ export class FavoritesView extends Favorites{
     tr.innerHTML = ` 
     
     <td class="user"><img src="https://github.com/maykbrito.png" alt="">
-      <a href="https://github.com/maykbrito" target="_blank">
-        <p>Mayk xxx</p>
-        <span>maykbrito</span>
-      </a>
-    
-    </td>
-    <td class="repositories">76</td>
-    <td class="followers">9589</td>
-    <td>
-      <button class="remove">&times;</button>
-    </td>
+					<a href="https://github.com/maykbrito" target="_blank">
+						<p>Mayk Brito</p>
+						<span>/maykbrito</span>
+					</a>
+				
+				</td>
+				<td class="repositories">76</td>
+				<td class="followers">9589</td>
+				<td>
+					<button class="remove">Remove
+					</button>
+				</td>
   `
 
   return tr
@@ -171,9 +182,7 @@ export class FavoritesView extends Favorites{
 
   removeAllTr(){
 
-      
-
-     this.tbody.querySelectorAll('tr')
+           this.tbody.querySelectorAll('tr')
         .forEach( (tr)=>{
             tr.remove()
         } ) 

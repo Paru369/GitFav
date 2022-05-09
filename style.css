@@ -7,11 +7,19 @@
 
 :root{
 
+  --hue: 300;
+
 font-size: 62.5%;
---ff-primary: 'Poppings';
---text-color: #303030;
---hue: 194;
---primary-color: hsl(var(--hue), 100%, 63%);
+--ff-primary: 'Roboto', 'Sans Serif';
+--text-color: hsla(calc(var(--hue) + 46), 9%, 89%, 1);
+--primary-color:hsla(var(--hue), 72%, 13%, 1);
+--input: hsla(calc(var(--hue) - 3), 65%, 7%, 1);
+--fav: hsla(calc(var(--hue) + 1), 70%, 25%, 1);
+--odd: hsla(calc(var(--hue) + 6), 61%, 6%, 0.5);
+--even: hsla(calc(var(--hue) - 6), 65%, 7%, 1);
+
+--fsize: 1.8rem;
+--bg: #000000;
 
 }
 
@@ -32,16 +40,16 @@ font-size: 62.5%;
 
 body{
 
-  font-size: 1.6 rem;
-  font-family: 'Poppins';
-  background-color: rgb(243, 243, 248);
+  font-size: var(--fsize);
+  font-family: var(--ff-primary);
+  background-color: var(--bg);
 }
 
 
 
 #app{
 
-  max-width: 500px;
+  max-width: 1120px;
   margin: 0 auto;
   padding: 2rem;
 }
@@ -50,15 +58,10 @@ header{
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 2.5rem 0;
+  margin: 8rem 0;
 }
 
-header h1{
 
-  font-size: 2rem;
-  text-transform: uppercase;
-  
-}
 
 .search{
 
@@ -68,26 +71,46 @@ header h1{
 }
 
 .search input {
-  height: 3.2rem;
-  border: 1px solid #cccccc;
-  border-radius: .4rem 0 0 .4rem ;
-  padding: 0 .8rem;
+  width: 46rem;
+  color: var(--text-color);
+  height: 4.8rem;
+  font-size: 1.6rem;
+  background-color: var(--input);
+  border: none;
+  border-radius: 0.5rem ;
+  padding: 1.6rem;
+  margin-right: 0.8rem;
 }
 
 .search button{
 
-  background-color: var(--primary-color);
-  height: 3.2rem;
-  border: 1px solid #cccccc;
-  border-radius: 0 .4rem .4rem 0 ;
+  background-color: var(--fav);
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 0.8rem;
+  height: 4.8rem;
+  width: 17rem;
+  border: none;
+  border-radius: 0.5rem ;
   padding: 0 1rem;
   cursor: pointer;
+  text-transform: uppercase;
+  color: white;
 
 }
 
-.search button:rover{
+.search button:hover{
 
-  filter: brightness(1.1);
+  background-color: white;
+  color: var(--fav);
+  
+
+}
+
+.search button:hover path{
+
+  fill: var(--fav);
 
 }
 
@@ -95,29 +118,44 @@ header h1{
 table{
 
   width: 100%;
-  font-size: 1.4rem;
+  font-size: var(--fsize);
   color: var(--text-color);
   border-collapse: collapse;
-  box-shadow: 0 1rem 2rem -1rem rgba(0,0,0,0.3);
+  /* border: 1px solid hsla(195, 91%, 25%, 1); */
+ 
+  
 }
 
 table th{
 
   background-color: var(--primary-color);
   text-align: left;
-  font-weight: normal;
+
+  font-weight: 700;
   padding: 1.5rem;
 
 }
 
+
+
 table th:first-child{
 
-  border-top-left-radius: .4rem;
+  border-top-left-radius: 1rem;
 }
 
+
+
 table th:last-child{
-  border-top-right-radius: 0.4rem;
+  border-top-right-radius: 1rem;
 }
+
+/* table td:last-child{
+  border-bottom-right-radius: 1rem;
+}
+
+table td:first-child{
+  border-bottom-left-radius: 1rem;
+} */
 
 
 table td{
@@ -128,28 +166,32 @@ table td{
 }
 
 table tr:nth-child(odd){
-  background-color: #DDDDDD;
+  background-color: var(--odd);
 }
 
+
+
 table tr:nth-child(even){
-  background-color: #EEEEEE;
+  background-color: var(--even);
 }
 
 td.user{
 
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 2rem;
   
 }
 
 td.user a{
   text-decoration: none;
   color: var(--text-color);
+  
 }
 
 td.user a p{
   font-weight: 700;
+  margin-bottom: 0.6rem;
 }
 
 td.user img{
@@ -157,13 +199,34 @@ td.user img{
 width: 5rem;
 height: 5rem;
 object-fit: cover;
-border-radius: 50%;
+border-radius: 20%;
 }
 
 td .remove{
   border: none;
   background: none;
-  color: red;
+  color: hsla(355, 91%, 66%, 1);
+
+  font-weight: 700;
+font-size: var(--fsize);
+line-height: 160%;
   cursor: pointer;
+  font-size: 1.4rem;
 }
+
+
+.nada {
+color: hsla(189, 4%, 32%, 1);
+font-size: 4rem;
+display: flex;
+gap: 6rem;
+font-weight: 700;
+align-items: center;
+width: 100%;
+justify-content: center;
+margin-top: 10rem;
+
+
+}
+
 
