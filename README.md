@@ -1,7 +1,7 @@
 # GIT FAV
 
 
-<img height="300px" src="./assets/Screenshot.png"> 
+<img height="300px" src="https://github.com/Paru369/GitFav/blob/main/assets/screenshot.png"> 
 
 Página para salvar perfis favoritos do Github.
 
